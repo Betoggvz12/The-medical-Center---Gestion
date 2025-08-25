@@ -1,31 +1,61 @@
 ﻿using System;
+using Sistema_Gestion;
 
 namespace Sistema_Gestion;
 
 class Paciente()
 {
+    \
+    
     //Datos Personales de los Pacientes 
-    private string Nombre { get; set; }
-    private int Edad { get; set; }
-    private string Direccion { get; set; }
-    private int Telefono { get; set; }
-    private string Correo { get; set; }
-    private string Historial { get; set; }
-    private string Medico { get; set; }
+    public Nombre { get; set; }
+    public int Edad { get; set; }
+    public string Direccion { get; set; }
+    public int Telefono { get; set; }
+    public string Correo { get; set; }
+    public string Historial { get; set; }
+    public string Medico { get; set; }
 }
 
 class Sistema_De_Gestion_Para_Una_Clinica_Medica
 {
     // private List<Paciente> listaPacientes = new List<Paciente>();
     private List<Paciente> listaPacientes = new List<Paciente>();
-
+    private Dictionary<int, Paciente> id_Paciente = new Dictionary<int, Paciente>();
+    private Dictionary<Paciente> Historial_Paciente = new Dictionary<Paciente>
 
 
 
     // Modulo de Pacientes
     public void Alta_Paciente()
     {
-        
+        Paciente p = new Paciente();
+
+        Console.WriteLine("Ingrese la informacion del paciente");
+    
+        Console.WriteLine("Nombre: ");
+        p.Nombre = int.Parse(Console.ReadLine());
+        Console.WriteLine("Edad");
+        p.Edad = int.Parse(Console.ReadLine());
+        Console.WriteLine("Direccion:");
+        p.Direccion = int.Parse(Console.ReadLine());
+        Console.WriteLine("Telefono:");
+        p.Telefono = int.Parse(Console.ReadLine());
+        Console.WriteLine("Correo:");
+        p.Correo = int.Parse(Console.ReadLine());
+        Console.WriteLine("Historial:");
+        p.Historial = int.Parse(Console.ReadLine());
+        Console.WriteLine("Medico:");
+        p.Medico = int.Parse(Console.ReadLine());
+
+        listaPacientes.Add(p);
+        int id = id_Paciente.Count + 1;
+        Historial_Paciente[id] = p;
+
+        Console.WriteLine($"✅ Paciente agregado con ID: {id}");
+
+
+
     }
 
 
